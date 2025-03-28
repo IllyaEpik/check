@@ -16,7 +16,7 @@ client_openai = openai.AsyncOpenAI(api_key= OPENAI_SECRETKEY)
 async def get_responce_from_ai(request: str):
     # надсилаємо запит до chatgpt а потім отримуємо відповідь
     response = await client_openai.chat.completions.create(
-        model="gpt-4o-mini", # вказуємо модель chatgpt, яку будемо використовувати
+        model="ft:gpt-4o-mini-2024-07-18:worldit::BFf7bJwz", # вказуємо модель chatgpt, яку будемо використовувати
         messages = [{
             "role": "user", # вказуємо те як буде бачити нас chatgpt "користувач"
             "content": request, #вказуємо текст, який ми відправимо chatgpt
