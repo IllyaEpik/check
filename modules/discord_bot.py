@@ -31,9 +31,9 @@ async def on_message(message: discord.Message):
         content = message.content
         # Перевіряємо, що повідомлення не пусте
         if content:
-            # 
+            # ми отримуємо текст що написав chatgpt з тексту що надіслав користувач
             answer = await get_responce_from_ai(content)
-            # 
+            # переносим сообщение в перемменную message_for_answer 
             message_for_answer = await message.channel.fetch_message(message.id)
-            # 
+            # используем перемменную message_for_answer для того что бы указать какому пользователю мы отправляем сообщение
             await message_for_answer.reply(answer)
